@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
-
-    
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField]
+    string strTag;
     void Update()
     {
-     
-
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == strTag)
+            StartCoroutine("RestartGameCo");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public IEnumerator RestartGameCo()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(0);
     }
 }
