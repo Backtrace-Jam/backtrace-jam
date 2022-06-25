@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
-    [SerializeField]
-    string strTag;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -13,9 +11,9 @@ public class GameOver : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.tag == strTag)
+        if (other.gameObject.CompareTag("Plane"))
             StartCoroutine("RestartGameCo");
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

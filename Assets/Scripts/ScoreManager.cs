@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        if (score >= 250)
+        if (score >= 1000)
         {
             YouWin();
         }
