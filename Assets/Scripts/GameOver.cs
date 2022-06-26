@@ -8,7 +8,7 @@ public class GameOver : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -20,6 +20,6 @@ public class GameOver : MonoBehaviour
     public IEnumerator RestartGameCo()
     {
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
