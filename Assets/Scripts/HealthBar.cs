@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour
 {
     public float health;
     public Slider slider;
+    public AudioSource hitSound;
 
     void Update()
     {
@@ -19,6 +20,7 @@ public class HealthBar : MonoBehaviour
         if(obj.gameObject.tag == "Enemy")
             health = health-10f;
             HealthLoss();
+        hitSound.Play();
 
     }
     
@@ -26,7 +28,7 @@ public class HealthBar : MonoBehaviour
     {
         if (health == 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }
