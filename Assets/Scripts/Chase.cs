@@ -12,7 +12,6 @@ public class Chase : MonoBehaviour
 
     Rigidbody rigid;
 
-    // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
@@ -22,7 +21,6 @@ public class Chase : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 v3MeTowardsTarget = transTowards.position - transform.position;

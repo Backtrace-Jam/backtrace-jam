@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
     {
         if(obj.gameObject.tag == "Enemy")
             health = health-10f;
-        HealthLoss();
+            HealthLoss();
 
     }
     
