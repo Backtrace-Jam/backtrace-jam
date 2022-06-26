@@ -36,7 +36,7 @@ public class ScoreManager : MonoBehaviour
     void YouWin()
     {
         text.text = "You Win !";
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        SceneManager.LoadScene("Game Win"); 
 
     }
 

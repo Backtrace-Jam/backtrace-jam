@@ -9,13 +9,6 @@ public class HealthBar : MonoBehaviour
     public float health;
     public Slider slider;
 
-    void Start()
-    {
-       // healthbar = GetComponent<Image>();
-
-    }
-
-
     void Update()
     {
         slider.value = health;
